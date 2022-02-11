@@ -17,7 +17,7 @@ public class TestingApi {
         Assert.assertEquals(appRequestsPost.getResponse(99).statusCode(), 200, "it's no valid request");
         SoftAssert checkPost = new SoftAssert();
         checkPost.assertEquals(appRequestsPost.getObjectPost(99).getId(), 99, "it's no valid request");
-        checkPost.assertNotNull(appRequestsPost.getObjectPost(99).getTitle(), "it's no valid content");
+        checkPost.assertNotNull(appRequestsPost.getObjectPost(200).getTitle(), "it's no valid content");
         checkPost.assertNotNull(appRequestsPost.getObjectPost(99).getBody(), "it's no valid content");
         checkPost.assertAll();
         AppRequests appRequestsWrongPost = new AppRequests("/posts", "Send a GET request to get  post 150");
