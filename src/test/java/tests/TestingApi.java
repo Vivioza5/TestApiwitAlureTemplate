@@ -28,7 +28,7 @@ public class TestingApi {
         Assert.assertTrue(appRequestsUsers.getResponse().contentType().contains("json"), "its no json content");
         User user = appRequestsUsers.getObjectListUser().get(4);
         Assert.assertEquals(appRequestsUsers.getObjectListUser().get(4).toString(), appRequestsUsers.getObjectUser(5).toString());
-        AppRequests appRequestsUserFive = new AppRequests("/users", "Send a GET request to get all users from users");
+        AppRequests appRequestsUserFive = new AppRequests("/users", "Send a GET request to get all users");
         Assert.assertEquals(appRequestsUserFive.getResponse(5).statusCode(), 200, "it's no valid request");
         Assert.assertEquals(appRequestsUserFive.getObjectUser(5).toString(), user.toString(), "it's no valid request");
         AppRequests appRequestsPostingPost = new AppRequests("/posts", "Send a GET request to get  user 5.");
